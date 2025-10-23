@@ -12,8 +12,11 @@ struct WaterTrackerView: View {
     
     var body: some View {
         VStack(spacing: 20){
-            Text("water tracker")
-                .font(.title)
+            Text("water")
+                .font(.largeTitle)
+                .bold()
+            Text("tracker")
+                .font(.largeTitle)
                 .bold()
             
             Text("cups drunk: \(cups)")
@@ -23,13 +26,18 @@ struct WaterTrackerView: View {
                 cups += 1
             }
             .padding()
-            .background(Color.blue)
             .foregroundColor(.white)
             .cornerRadius(10)
             
             Spacer()
         }
         .padding()
+    }
+}
+
+struct HelloWorldView: View {
+    var body: some View {
+        Text("Hello, World!")
     }
 }
     
@@ -40,18 +48,11 @@ struct WaterTrackerView: View {
                     .tabItem {
                         Label("Water", systemImage: "drop.fill")
                     }
+                HelloWorldView()
+                    .tabItem {
+                        Label("Hello", systemImage: "hand.wave")
+                    }
             }
-//            TabView {
-//                        WaterTrackerView()
-//                            .tabItem {
-//                                Label("Water", systemImage: "drop.fill")
-//                            }
-//
-//                        HelloWorldView()
-//                            .tabItem {
-//                                Label("Hello", systemImage: "hand.wave")
-//                            }
-//                    }
         }
     }
     
